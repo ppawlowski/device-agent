@@ -5,11 +5,8 @@
 # Set error action preference to stop on errors
 $ErrorActionPreference = "Stop"
 
-# Set installation directory to the directory from which the script is executed
-# Use current working directory as fallback if PSScriptRoot is empty
-$InstallDir = if ($PSScriptRoot) { $PSScriptRoot } else { Get-Location }
-# Convert to string to ensure it's not a PathInfo object
-$InstallDir = $InstallDir.ToString()
+# Set installation directory to current working directory since script is executed via iex
+$InstallDir = (Get-Location).Path
 
 # GitHub repository information
 $REPO_OWNER = "ppawlowski"
@@ -87,7 +84,7 @@ function Download-Installer {
         
         # Install the binary
         $finalBinaryName = "flowfuse-device-agent-installer-${RELEASE}.exe"
-        $finalPath = Join-Path $InstallDir $finalBinaryName
+        $finalPath = Join-Path -Path $InstallDir -ChildPath $finalBinaryName
         
         Copy-Item -Path $tempFileWithExt -Destination $finalPath -Force
         
