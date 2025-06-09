@@ -6,7 +6,8 @@
 $ErrorActionPreference = "Stop"
 
 # Set installation directory to the directory from which the script is executed
-$InstallDir = $PSScriptRoot
+# Use current working directory as fallback if PSScriptRoot is empty
+$InstallDir = if ($PSScriptRoot) { $PSScriptRoot } else { $PWD }
 
 # GitHub repository information
 $REPO_OWNER = "ppawlowski"
