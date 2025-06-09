@@ -12,7 +12,7 @@ REPO_OWNER="ppawlowski"
 REPO_NAME="device-agent"
 RELEASE="0.1.0"
 RELEASE_TAG="installer-0.1.0"
-BINARY_PREFIX="flowfuse-device-agent-installer"
+BINARY_PREFIX="flowfuse-device-installer"
 
 # Function to detect operating system
 detect_os() {
