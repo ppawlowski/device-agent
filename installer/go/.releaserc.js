@@ -31,15 +31,18 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
+          if (typeof commit.hash === `string`) {
+            commit.shortHash = commit.hash.substring(0, 7)
+          }
           // Create a new commit object with all original properties preserved
-          // const modifiedCommit = { 
-            // ...commit,
+          const modifiedCommit = { 
+            ...commit,
             // Override the subject and set scope to empty string
-            // subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-            // scope: ''
-          // };
-          // return modifiedCommit;
-          return commit, context;
+            subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
+            scope: '',            
+
+          };
+          return modifiedCommit;
         }
       }
     }],
