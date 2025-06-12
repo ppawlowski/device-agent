@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # FlowFuse Device Agent Installer Script
 # This script detects the OS and architecture, then downloads the appropriate binary
 # from the FlowFuse Device Agent releases
