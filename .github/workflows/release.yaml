@@ -141,7 +141,7 @@ jobs:
         mkdir -p release-artifacts
         
         # Move and verify all artifacts
-        find ./artifacts -name "flowfuse-device-installer-*" -type f -exec cp {} release-artifacts/ \;
+        find ../../artifacts -name "flowfuse-device-installer-*" -type f -exec cp {} release-artifacts/ \;
         
         echo "Available artifacts:"
         ls -la release-artifacts/
