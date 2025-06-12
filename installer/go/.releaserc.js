@@ -31,14 +31,17 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
-          // Create a new commit object with all original properties preserved
-          const modifiedCommit = { 
-            ...commit,
-            // Override the subject and set scope to empty string
-            subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-            scope: ''
-          };
-          return modifiedCommit;
+          // // Create a new commit object with all original properties preserved
+          // const modifiedCommit = { 
+          //   ...commit,
+          //   // Override the subject and set scope to empty string
+          //   subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
+          //   scope: ''
+          // };
+          // return modifiedCommit;
+          if (commit.scope === 'installer') {
+            commit.scope = ''
+          }
         }
       }
     }],
