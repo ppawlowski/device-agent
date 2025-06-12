@@ -1,12 +1,13 @@
 package main
 
 import (
-    "flag"
-    "fmt"
-    "os"
+	"flag"
+	"fmt"
+	"os"
 
-    "installer/internal/config"
-    "installer/internal/handlers"
+	"installer/internal/config"
+	"installer/internal/handlers"
+
 )
 
 func main() {
@@ -30,6 +31,8 @@ func main() {
         handlers.StartHandler(cfg)
     case "stop":
         handlers.StopHandler(cfg)
+    case "status":
+        fmt.Println("Status command is not implemented yet.")
     default:
         fmt.Println("Unknown command. Available commands: start, stop")
         os.Exit(1)
