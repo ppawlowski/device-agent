@@ -91,7 +91,7 @@ jobs:
         mkdir -p artifacts
         
         # Build with optimized flags
-        go build -ldflags "-X main.version=$VERSION -s -w" -o artifacts/${{ matrix.output }} main.go
+        go build -ldflags "-X main.version=production -s -w" -o artifacts/${{ matrix.output }} main.go
         
         # Verify the binary was created
         if [ ! -f "artifacts/${{ matrix.output }}" ]; then
