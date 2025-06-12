@@ -31,6 +31,9 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
+          if (commit.subject && commit.subject.startsWith('installer: ')) {
+            commit.subject = commit.subject.replace('installer: ', '');
+          }
           return commit;
         }
       }
@@ -47,6 +50,9 @@ module.exports = {
         transform: (commit, context) => {
           if (commit.scope !== 'installer') {
             return false;
+          }
+          if (commit.subject && commit.subject.startsWith('installer: ')) {
+            commit.subject = commit.subject.replace('installer: ', '');
           }
           return commit;
         }
