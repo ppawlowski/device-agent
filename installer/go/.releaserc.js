@@ -34,9 +34,9 @@ module.exports = {
           // Create a new commit object with all original properties preserved
           const modifiedCommit = { 
             ...commit,
-            // Override only the properties we want to change
+            // Override the subject and set scope to empty string
             subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-            scope: null
+            scope: ''
           };
           return modifiedCommit;
         }
