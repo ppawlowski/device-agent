@@ -9,7 +9,6 @@
 set -e
 
 # GitHub repository information
-# REPO_OWNER="FlowFuse"
 REPO_OWNER="ppawlowski"
 REPO_NAME="device-agent"
 RELEASE="0.1.0"
