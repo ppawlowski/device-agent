@@ -26,7 +26,7 @@ module.exports = {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
       writerOpts: {
-        commitsSort: ['scope', 'subject'],
+        // commitsSort: ['scope', 'subject'],
         transform: (commit, context) => {
           if (commit.scope !== 'installer') {
             return false;
