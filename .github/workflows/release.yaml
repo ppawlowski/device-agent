@@ -53,6 +53,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - run: |
+        echo "Calculated version: ${{ steps.semantic.outputs.version }}"
+        echo "New release published: ${{ steps.semantic.outputs.new-release-published }}"
+
   build-artifacts:
     name: Build Multi-Platform Binaries
     runs-on: ubuntu-latest
