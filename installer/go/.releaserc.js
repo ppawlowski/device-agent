@@ -31,9 +31,12 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
-          if (commit.subject && commit.subject.startsWith('installer: ')) {
-            commit.subject = commit.subject.replace('installer: ', '');
+          // Remove scope from subject - handle different formats
+          if (commit.subject) {
+            commit.subject = commit.subject.replace(/^installer:\s*/, '');
           }
+          // Clear the scope to prevent it from being displayed
+          commit.scope = null;
           return commit;
         }
       }
@@ -51,9 +54,12 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
-          if (commit.subject && commit.subject.startsWith('installer: ')) {
-            commit.subject = commit.subject.replace('installer: ', '');
+          // Remove scope from subject - handle different formats
+          if (commit.subject) {
+            commit.subject = commit.subject.replace(/^installer:\s*/, '');
           }
+          // Clear the scope to prevent it from being displayed
+          commit.scope = null;
           return commit;
         }
       }
