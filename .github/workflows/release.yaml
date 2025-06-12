@@ -64,7 +64,7 @@ jobs:
       with:
         path: |
           ~/.cache/go-build
-          ~/go/pkg/mod
+          ~/instaler/go
         key: ${{ runner.os }}-go-${{ hashFiles('installer/go/go.sum') }}
         restore-keys: |
           ${{ runner.os }}-go-
