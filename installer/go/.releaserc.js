@@ -27,20 +27,19 @@ module.exports = {
       },
       writerOpts: {
         commitsSort: ['scope', 'subject'],
-      //   transform: (commit, context) => {
-      //     if (commit.scope !== 'installer') {
-      //       return false;
-      //     }
-      //     // Create a new commit object with modified properties
-      //     const modifiedCommit = { ...commit };
-      //     // Remove scope from subject - handle different formats
-      //     if (modifiedCommit.subject) {
-      //       modifiedCommit.subject = modifiedCommit.subject.replace(/^installer:\s*/, '');
-      //     }
-      //     // Clear the scope to prevent it from being displayed
-      //     modifiedCommit.scope = null;
-      //     return modifiedCommit;
-      //   }
+        transform: (commit, context) => {
+          if (commit.scope !== 'installer') {
+            return false;
+          }
+          // Create a new commit object with all original properties preserved
+          const modifiedCommit = { 
+            ...commit,
+            // Override only the properties we want to change
+            subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
+            scope: null
+          };
+          return modifiedCommit;
+        }
       }
     }],
     ['@semantic-release/github', {
