@@ -41,31 +41,9 @@ module.exports = {
         }
       }
     }],
-    ['@semantic-release/changelog', {
-      changelogFile: 'CHANGELOG.md',
-      changelogTitle: '# Changelog\n\nAll notable changes to the FlowFuse Device Installer will be documented in this file.',
-      preset: 'angular',
-      parserOpts: {
-        noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
-      },
-      writerOpts: {
-        commitsSort: ['scope', 'subject'],
-        transform: (commit, context) => {
-          if (commit.scope !== 'installer') {
-            return false;
-          }
-          // Remove scope from subject - handle different formats
-          if (commit.subject) {
-            commit.subject = commit.subject.replace(/^installer:\s*/, '');
-          }
-          // Clear the scope to prevent it from being displayed
-          commit.scope = null;
-          return commit;
-        }
-      }
-    }],
     ['@semantic-release/github', {
       releaseNameTemplate: 'Installer v${nextRelease.version}',
+      successComment: false,
       assets: [
         {
           path: 'release-artifacts/flowfuse-device-installer-linux-amd64',
