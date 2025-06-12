@@ -26,11 +26,34 @@ module.exports = {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
       writerOpts: {
-        commitsSort: ['scope', 'subject']
+        commitsSort: ['scope', 'subject'],
+        transform: (commit, context) => {
+          if (commit.scope !== 'installer') {
+            return false;
+          }
+          return commit;
+        }
       }
     }],
-    '@semantic-release/changelog',
+    ['@semantic-release/changelog', {
+      changelogFile: 'CHANGELOG.md',
+      changelogTitle: '# Changelog\n\nAll notable changes to the FlowFuse Device Installer will be documented in this file.',
+      preset: 'angular',
+      parserOpts: {
+        noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
+      },
+      writerOpts: {
+        commitsSort: ['scope', 'subject'],
+        transform: (commit, context) => {
+          if (commit.scope !== 'installer') {
+            return false;
+          }
+          return commit;
+        }
+      }
+    }],
     ['@semantic-release/github', {
+      releaseNameTemplate: 'Installer v${nextRelease.version}',
       assets: [
         {
           path: 'release-artifacts/flowfuse-device-installer-linux-amd64',
@@ -56,9 +79,7 @@ module.exports = {
           path: 'release-artifacts/flowfuse-device-installer-macos-arm64',
           label: 'macOS ARM64 Installer'
         }
-      ],
-      releasedLabels: ['released'],
-      successComment: false
+      ]
     }]
   ]
 };
