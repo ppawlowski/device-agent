@@ -83,7 +83,6 @@ jobs:
       env:
         GOOS: ${{ matrix.goos }}
         GOARCH: ${{ matrix.goarch }}
-        VERSION: ${{ steps.get_version.outputs.version }}
       run: |
         echo "Building ${{ matrix.output }} for ${{ matrix.goos }}/${{ matrix.goarch }}..."
         
@@ -105,7 +104,7 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
       with:
-        name: installer-${{ matrix.goos }}-${{ matrix.goarch }}
+        name: ${{ matrix.output }}
         path: installer/go/artifacts/${{ matrix.output }}
         retention-days: 1 # Short retention for release artifacts
 
