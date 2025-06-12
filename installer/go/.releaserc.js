@@ -46,28 +46,22 @@ module.exports = {
       successComment: false,
       assets: [
         {
-          path: 'release-artifacts/flowfuse-device-installer-linux-amd64',
-          label: 'Linux AMD64 Installer'
+          path: 'release-artifacts/flowfuse-device-installer-linux-amd64'
         },
         {
-          path: 'release-artifacts/flowfuse-device-installer-linux-arm64',
-          label: 'Linux ARM64 Installer'
+          path: 'release-artifacts/flowfuse-device-installer-linux-arm64'
         },
         {
-          path: 'release-artifacts/flowfuse-device-installer-linux-arm',
-          label: 'Linux ARM Installer'
+          path: 'release-artifacts/flowfuse-device-installer-linux-arm'
         },
         {
-          path: 'release-artifacts/flowfuse-device-installer-windows-amd64.exe',
-          label: 'Windows AMD64 Installer'
+          path: 'release-artifacts/flowfuse-device-installer-windows-amd64.exe'
         },
         {
-          path: 'release-artifacts/flowfuse-device-installer-macos-amd64',
-          label: 'macOS AMD64 Installer'
+          path: 'release-artifacts/flowfuse-device-installer-macos-amd64'
         },
         {
-          path: 'release-artifacts/flowfuse-device-installer-macos-arm64',
-          label: 'macOS ARM64 Installer'
+          path: 'release-artifacts/flowfuse-device-installer-macos-arm64'
         }
       ]
     }]
