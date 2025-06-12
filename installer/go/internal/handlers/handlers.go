@@ -20,7 +20,7 @@ func ExecuteCommand(command string) {
 
 // HelloCommand is a simple command that prints a greeting.
 func HelloCommand() {
-    fmt.Println("Hello, welcome to the Go CLI application!")
+    fmt.Println("Hello, welcome to MY OWN Go CLI application!")
 }
 
 
