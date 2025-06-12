@@ -25,8 +25,8 @@ jobs:
       run:
         working-directory: ./installer/go
     outputs:
-      version: ${{ steps.semantic.outputs.version }}
-      new-release-published: ${{ steps.semantic.outputs.new-release-published }}
+      version: ${{ steps.semantic.outputs.new_release_version }}
+      new-release-published: ${{ steps.semantic.outputs.new_release_published }}
     
     steps:
     - name: Checkout code
