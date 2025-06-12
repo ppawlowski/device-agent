@@ -31,13 +31,15 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
+          // Create a new commit object with modified properties
+          const modifiedCommit = { ...commit };
           // Remove scope from subject - handle different formats
-          if (commit.subject) {
-            commit.subject = commit.subject.replace(/^installer:\s*/, '');
+          if (modifiedCommit.subject) {
+            modifiedCommit.subject = modifiedCommit.subject.replace(/^installer:\s*/, '');
           }
           // Clear the scope to prevent it from being displayed
-          commit.scope = null;
-          return commit;
+          modifiedCommit.scope = null;
+          return modifiedCommit;
         }
       }
     }],
