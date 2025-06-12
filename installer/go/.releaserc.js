@@ -39,7 +39,7 @@ module.exports = {
             // scope: ''
           // };
           // return modifiedCommit;
-          return commit;
+          return commit, context;
         }
       }
     }],
