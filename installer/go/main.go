@@ -14,7 +14,7 @@ var version = "dev"
 
 func main() {
 	// Define command-line flags
-	configFile := flag.String("config", "config.yaml", "Path to the configuration file")
+	configFile := flag.String("config", "config.yaml", "Path to the configuration files")
 	command := flag.String("command", "", "Command to execute")
 	showVersion := flag.Bool("version", false, "Show version information")
 
