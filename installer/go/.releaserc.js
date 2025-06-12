@@ -32,9 +32,9 @@ module.exports = {
             return false;
           }
           // Remove scope from subject - handle different formats
-          //if (commit.subject) {
-          //  commit.subject = commit.subject.replace(/^installer:\s*/, '');
-          //}
+          if (commit.subject) {
+            commit.subject = commit.subject.replace(/^installer:\s*/, '');
+          }
           // Clear the scope to prevent it from being displayed
           commit.scope = null;
           return commit;
