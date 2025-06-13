@@ -27,17 +27,17 @@ module.exports = {
       },
       writerOpts: {
         // commitsSort: ['scope', 'subject'],
-        transform: (commit, context) => {
+        transform: (commit) => {
           if (commit.scope !== 'installer') {
             return false;
           }
           // Create a new commit object with all original properties preserved
           const modifiedCommit = { 
-            ...commit, ...context,
+            ...commit,
             // Override the subject and set scope to empty string
-            subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-            scope: '',
-            hash: commit.hash || commit.shortHash   
+            // subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
+            // scope: '',
+            // hash: commit.hash || commit.shortHash   
           };
           return modifiedCommit;
         }
