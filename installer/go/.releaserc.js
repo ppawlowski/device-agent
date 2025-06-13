@@ -36,7 +36,7 @@ module.exports = {
             return false;
           }
           // Remove the scope from the subject line
-          commit.subject = commit.subject.replace(/installer:\s*/, '');
+          commit.subject = commit.subject.replace(/^\*\sinstaller:\s*/, '');
           return commit;
         }
         // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
