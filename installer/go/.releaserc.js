@@ -22,10 +22,6 @@ module.exports = {
     }],
     ['@semantic-release/release-notes-generator', {
       preset: 'angular',
-      // presetConfig: {
-      //   scope: "installer",
-      //   scopeOnly: true,
-      // },
       parserOpts: {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
@@ -39,25 +35,7 @@ module.exports = {
           commit.scope = null;
           return commit;
         },
-        // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
-      // writerOpts: {
-      //   // commitsSort: ['scope', 'subject'],
-      //   transform: (commit) => {
-      //     if (commit.scope !== 'installer') {
-      //       return false;
-      //     }
-      //     // Create a new commit object with all original properties preserved
-      //     // const modifiedCommit = { 
-      //     //   ...commit,
-      //     //   // Override the subject and set scope to empty string
-      //     //   // subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-      //     //   // scope: '',
-      //     //   // hash: commit.hash || commit.shortHash   
-      //     // };
-      //     // return modifiedCommit;
-      //   }
-      // }
     }],
     ['@semantic-release/github', {
       releaseNameTemplate: 'Installer v${nextRelease.version}',
