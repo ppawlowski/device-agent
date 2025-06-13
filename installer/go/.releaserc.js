@@ -39,7 +39,7 @@ module.exports = {
           commit.scope = null;
           return commit;
         },
-        commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
+        // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
       // writerOpts: {
       //   // commitsSort: ['scope', 'subject'],
