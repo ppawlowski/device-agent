@@ -3,7 +3,7 @@ module.exports = {
   branches: ['main'],
   plugins: [
     ['@semantic-release/commit-analyzer', {
-      preset: 'conventionalcommits',
+      preset: 'angular',
       releaseRules: [
         { scope: '!installer', release: false },
         { scope: 'installer', type: 'feat', release: 'minor' },
@@ -21,8 +21,7 @@ module.exports = {
       }
     }],
     ['@semantic-release/release-notes-generator', {
-      // preset: 'angular',
-      preset: 'conventionalcommits',
+      preset: 'angular',
       presetConfig: {
         scope: "installer",
         scopeOnly: true,
