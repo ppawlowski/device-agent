@@ -22,10 +22,10 @@ module.exports = {
     }],
     ['@semantic-release/release-notes-generator', {
       preset: 'angular',
-      presetConfig: {
-        scope: "installer",
-        scopeOnly: true,
-      },
+      // presetConfig: {
+      //   scope: "installer",
+      //   scopeOnly: true,
+      // },
       parserOpts: {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
