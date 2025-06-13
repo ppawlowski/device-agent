@@ -32,14 +32,14 @@ module.exports = {
             return false;
           }
           // Create a new commit object with all original properties preserved
-          const modifiedCommit = { 
-            ...commit,
-            // Override the subject and set scope to empty string
-            // subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
-            // scope: '',
-            // hash: commit.hash || commit.shortHash   
-          };
-          return modifiedCommit;
+          // const modifiedCommit = { 
+          //   ...commit,
+          //   // Override the subject and set scope to empty string
+          //   // subject: commit.subject ? commit.subject.replace(/^installer:\s*/, '') : commit.subject,
+          //   // scope: '',
+          //   // hash: commit.hash || commit.shortHash   
+          // };
+          // return modifiedCommit;
         }
       }
     }],
