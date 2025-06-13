@@ -31,9 +31,13 @@ module.exports = {
       },
       writerOpts: {
         transform: (commit) => {
+        // Only include commits with 'installer' scope
           if (commit.scope !== 'installer') {
             return false;
           }
+          // Remove the scope from the subject line
+          commit.subject = commit.subject.replace(/^(\s*\*\*\w+\*\*:\s*)/, '');
+          return commit;
         }
         // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
