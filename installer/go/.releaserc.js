@@ -21,10 +21,18 @@ module.exports = {
       }
     }],
     ['@semantic-release/release-notes-generator', {
-      preset: 'angular',
+      // preset: 'angular',
+      preset: "conventionalcommits",
+      presetConfig: {
+        scope: "installer",
+        scopeOnly: true,
+      },
       parserOpts: {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
+      writerOpts: {
+        commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
+      }
       // writerOpts: {
       //   // commitsSort: ['scope', 'subject'],
       //   transform: (commit) => {
