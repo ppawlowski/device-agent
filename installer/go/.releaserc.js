@@ -34,8 +34,8 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
-        },
-        commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
+        }
+        // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
       // writerOpts: {
       //   // commitsSort: ['scope', 'subject'],
