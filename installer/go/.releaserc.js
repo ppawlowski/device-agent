@@ -30,6 +30,11 @@ module.exports = {
         noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
       },
       writerOpts: {
+        transform: (commit) => {
+          if (commit.scope !== 'installer') {
+            return false;
+          }
+        },
         commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
       // writerOpts: {
