@@ -35,11 +35,11 @@ module.exports = {
           if (commit.scope !== 'installer') {
             return false;
           }
-          // Remove the scope from the subject line
-          commit.subject = commit.subject.replace(/^installer:\s*/, '');
+          // Clear the scope to prevent it from being displayed
+          commit.scope = null;
           return commit;
-        }
-        // commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
+        },
+        commitPartial: "* {{subject}} ([{{hash}}]({{commitUrl}}))\n"
       }
       // writerOpts: {
       //   // commitsSort: ['scope', 'subject'],
