@@ -1,3 +1,3 @@
 export function greet (name = 'world') {
-  return `hello ${name}`
+  return `hello ${name}, how are you?`
 }
