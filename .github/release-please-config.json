@@ -17,6 +17,7 @@
     },
     "installer": {
       "release-type": "go",
+      "component": "installer",
       "include-component-in-tag": true,
       "pull-request-title-pattern": "chore: Release Installer ${version}",
       "always-update": true,
