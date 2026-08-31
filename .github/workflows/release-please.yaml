@@ -23,11 +23,6 @@ jobs:
           private-key: ${{ secrets.GH_BOT_APP_KEY }}
           owner: ${{ github.repository_owner }}
           repositories: device-agent
-          # Fail at token generation (naming the permission) rather than as a
-          # vague 403 from the PR/label API later on
-          permission-contents: write
-          permission-pull-requests: write
-          permission-issues: write
 
       - name: Run Release Please
         uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
