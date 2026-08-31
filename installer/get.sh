@@ -11,8 +11,8 @@ set -e
 # GitHub repository information
 REPO_OWNER="ppawlowski"
 REPO_NAME="device-agent"
-RELEASE="0.1.0"
-RELEASE_TAG="installer-0.1.0"
+RELEASE="1.1.0" # x-release-please-version
+RELEASE_TAG="installer-v1.1.0" # x-release-please-version
 BINARY_PREFIX="flowfuse-device-installer"
 
 # Function to detect operating system
@@ -23,7 +23,7 @@ detect_os() {
             os="linux"
             ;;
         Darwin*)
-            os="darwin"
+            os="macos"
             ;;
         *)
             echo "Unsupported operating system: $(uname -s)"
