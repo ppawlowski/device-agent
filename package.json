@@ -1,0 +1,12 @@
+{
+  "name": "device-agent-ppawlowski",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "files": ["index.js"],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "license": "MIT"
+}
