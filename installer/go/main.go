@@ -24,6 +24,7 @@ func main() {
 	// Handle version flag
 	if *showVersion {
 		fmt.Printf("FlowFuse Device Installer version: %s\n", version)
+		fmt.Printf("")
 		return
 	}
 
