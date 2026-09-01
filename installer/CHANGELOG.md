@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ppawlowski/device-agent/compare/installer-v1.2.0...installer-v1.3.0) (2026-08-31)
+
+
+### Features
+
+* **installer:** Better print version  ([#9](https://github.com/ppawlowski/device-agent/issues/9)) ([315d5ff](https://github.com/ppawlowski/device-agent/commit/315d5fffbd2ca17bfdfea58e17e0ba5502536fba))
+
 ## [1.2.0](https://github.com/ppawlowski/device-agent/compare/v1.1.0...v1.2.0) (2026-08-31)
 
 

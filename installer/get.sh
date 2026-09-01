@@ -11,8 +11,8 @@ set -e
 # GitHub repository information
 REPO_OWNER="ppawlowski"
 REPO_NAME="device-agent"
-RELEASE="1.2.0" # x-release-please-version
-RELEASE_TAG="installer-v1.2.0" # x-release-please-version
+RELEASE="1.3.0" # x-release-please-version
+RELEASE_TAG="installer-v1.3.0" # x-release-please-version
 BINARY_PREFIX="flowfuse-device-installer"
 
 # Function to detect operating system
